@@ -1,0 +1,12 @@
+环境直接装就行, 我用3.8没问题. 用3.13会有报错, 我没管
+
+需呀手动安装gpu版本的jax  在https://storage.googleapis.com/jax-releases/jax_cuda_releases.html找
+我找的cuda12/jaxlib-0.4.13+cuda12.cudnn89-cp38-cp38-manylinux2014_x86_64.whl, 对应cuda,cudnn python,jax版本. 
+!!! 注意这里cudnn不需要在系统安装, 后面手动安装就可以
+先 pip uninstall jax jaxlib
+然后pip install xx.whl
+jax不会自动安装 我又手装了, 注意jax需要手动安装!!!
+pip install --upgrade "jax[cuda12_pip]==0.4.13"
+这样子会安装最新的cudnn, pip show nvidia-cudnn-cu12查看是9.几版本, 上面需要的是cudnn89
+所以再装一下cudnn   pip install nvidia-cudnn-cu12==8.9.7.29
+note: 现在好像cudnn都不往系统装了,都是在装环境的时候安装, 比如torch下载的那个cudatoolkit

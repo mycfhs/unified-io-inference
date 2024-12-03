@@ -9,3 +9,7 @@ sentencepiece
 # Just used for image resizing
 torch
 torchvision
+
+# yyc add
+matplotlib
+jupyter
